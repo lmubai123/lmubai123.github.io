@@ -24,7 +24,7 @@
     <meta name="description" content="这里是python爬虫的分享(◦˙▽˙◦)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python爬虫">
-<meta property="og:url" content="https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/index.html">
+<meta property="og:url" content="https://jpixxs.xyz/2020/03/15/PythonSpider/index.html">
 <meta property="og:site_name" content="Jpi">
 <meta property="og:description" content="这里是python爬虫的分享(◦˙▽˙◦)">
 <meta property="og:locale" content="zh_CN">
@@ -178,7 +178,7 @@
     </aside>
 
 
-<article id="post-Python爬虫"
+<article id="post-PythonSpider"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
@@ -202,82 +202,53 @@
 <p>写代码的软件是:Pydroid3</p>
 </blockquote>
 <p>写代码之前我们务必安装相关模块，这里用到的三个模块，但其中两个python自带，所以安装一个就好了</p>
-<pre><code class="python">pip install requests</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pip install requests</span><br></pre></td></tr></table></figure>
+
 <p>安装完模块我们先新建一个文件</p>
-<pre><code class="python">#写个开头，先导入模块
-import requests
-import re #正则表达式
-import time #说下为什么要导入这个模块，因为这个网站是个人网站，非盈利性的，就不要那么狠心了，不然网站就404了</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#写个开头，先导入模块</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re <span class="comment">#正则表达式</span></span><br><span class="line"><span class="keyword">import</span> time <span class="comment">#说下为什么要导入这个模块，因为这个网站是个人网站，非盈利性的，就不要那么狠心了，不然网站就404了</span></span><br></pre></td></tr></table></figure>
+
 <p>创建一个变量来获取网页内容<br>然后再print出来</p>
-<pre><code class="python">response = requests.get(&#39;https://www.vmgirls.com/12985.html&#39;)
-print(response.text) #打印网页内容</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">response = requests.get(<span class="string">'https://www.vmgirls.com/12985.html'</span>)</span><br><span class="line">print(response.text) <span class="comment">#打印网页内容</span></span><br></pre></td></tr></table></figure>
+
 <p>这时候其实还不算完，我们先运行一下看看</p>
-<pre><code class="html">&lt;!--这里很明显网站有反爬--&gt;
-&lt;html&gt;
-&lt;head&gt;&lt;title&gt;403 Forbidden&lt;/title&gt;&lt;/head&gt;
-&lt;body&gt;
-&lt;center&gt;&lt;h1&gt;403 Forbidden&lt;/h1&gt;&lt;/center&gt;
-&lt;hr&gt;&lt;center&gt;Nan&lt;/center&gt;
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--这里很明显网站有反爬--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span><span class="tag">&lt;<span class="name">title</span>&gt;</span>403 Forbidden<span class="tag">&lt;/<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">center</span>&gt;</span><span class="tag">&lt;<span class="name">h1</span>&gt;</span>403 Forbidden<span class="tag">&lt;/<span class="name">h1</span>&gt;</span><span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hr</span>&gt;</span><span class="tag">&lt;<span class="name">center</span>&gt;</span>Nan<span class="tag">&lt;/<span class="name">center</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 <p>我们直接在这里加一段代码就可以了</p>
-<pre><code class="python">import requests
-import re
-import time
-headers = {
-    &#39;User-Agent&#39;:&#39;Mozilla/5.0 (Macintosh; Intel Mac OSX10_14_2) AppleWebKit/537.36(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&#39;
-}
-response = requests.get(&#39;https://www.vmgirls.com/12985.html&#39;,headers=headers)
-print(response.text) #打印网页内容</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OSX10_14_2) AppleWebKit/537.36(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line">response = requests.get(<span class="string">'https://www.vmgirls.com/12985.html'</span>,headers=headers)</span><br><span class="line">print(response.text) <span class="comment">#打印网页内容</span></span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>上面那个user-agent相当于我们的身份，我们拿这个身份来访问这个网页，如果不写这个的话，我们的默认身份就是python，这就相当于站在别人面前说我是爬虫<br>之后我们再print一下，就能够打印出来网页的内容了</p>
 </blockquote>
 <p>这个时候我们想想我们要的是什么?  我们要的是图片，所以我们要现在这个网页源代码里找到图片所在的位置<br>这里我用的是via浏览器，主要是里面有一个查询网页源代码的，总比我们这里写代码运行查看方便很多</p>
-<p><img src="https://ae01.alicdn.com/kf/H99a90c853f874e2e8dc975cda521e9f3B.jpg" alt="源代码"></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ae01.alicdn.com/kf/H99a90c853f874e2e8dc975cda521e9f3B.jpg" alt="源代码" title="">
+                </div>
+                <div class="image-caption">源代码</div>
+            </figure>
+
 <blockquote>
 <p>向下翻翻很快就能找的到，我们可以看到，这些图片都是”&lt;a href=””alt=””title=””&gt;”</p>
 </blockquote>
 <p>看到这些规律之后就可以直接敲代码了，我这里用的是正规则表达式</p>
-<pre><code class="python">#pirnt(response.text)把这个改成下面那样方便点
-html = response.text
-urls = re.findall(&#39;&lt;a href=&quot;(.*?)&quot; alt=&quot;.*?&quot; title=&quot;.*?&quot;&gt;&#39;,html)
-print(urls)</code></pre>
-<p><img src="https://ae01.alicdn.com/kf/Hef59e43c5f874ed59a19e23f155bcfb54.jpg" alt="hiha"><br>可以看到已经成功了，我们把我们想要的都给读取出来了</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#pirnt(response.text)把这个改成下面那样方便点</span></span><br><span class="line">html = response.text</span><br><span class="line">urls = re.findall(<span class="string">'&lt;a href="(.*?)" alt=".*?" title=".*?"&gt;'</span>,html)</span><br><span class="line">print(urls)</span><br></pre></td></tr></table></figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="https://ae01.alicdn.com/kf/Hef59e43c5f874ed59a19e23f155bcfb54.jpg" alt="hiha" title="">
+                </div>
+                <div class="image-caption">hiha</div>
+            </figure>
+<p>可以看到已经成功了，我们把我们想要的都给读取出来了</p>
 <p>这时候我们要进行的就是下载  在下面加上</p>
-<pre><code class="python"># 保存图片
-for url in urls: # 请求上面的解析网页
-    time.sleep(2) # 让程序延迟2秒
-    file_name =url.split(&#39;/&#39;)[-1] # split(&#39;/&#39;)【-1】是处理图片的名字
-    response = requests.get(url, headers=headers)
-    with open(file_name, &#39;wb&#39;) as f: # 打开一个文件,文件名是file_name
-        f.write(response.content)</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存图片</span></span><br><span class="line"><span class="keyword">for</span> url <span class="keyword">in</span> urls: <span class="comment"># 请求上面的解析网页</span></span><br><span class="line">    time.sleep(<span class="number">2</span>) <span class="comment"># 让程序延迟2秒</span></span><br><span class="line">    file_name =url.split(<span class="string">'/'</span>)[<span class="number">-1</span>] <span class="comment"># split('/')【-1】是处理图片的名字</span></span><br><span class="line">    response = requests.get(url, headers=headers)</span><br><span class="line">    <span class="keyword">with</span> open(file_name, <span class="string">'wb'</span>) <span class="keyword">as</span> f: <span class="comment"># 打开一个文件,文件名是file_name</span></span><br><span class="line">        f.write(response.content)</span><br></pre></td></tr></table></figure>
 <p>这里没法细讲，反正加上就完事了，都弄完之后就能运行了，图片保存的位置是脚本在的地方，我这里是延迟2秒的，可以自行设置</p>
 <blockquote>
 <p>到这里就结束了,下面给大家全代码</p>
 </blockquote>
-<pre><code class="python">import requests
-import re # 正则表达式
-import time
-
-headers = {
-    &#39;User-Agent&#39;:&#39;Mozilla/5.0 (Macintosh; Intel Mac OSX10_14_2) AppleWebKit/537.36(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36&#39;
-}
-
-response = requests.get(&#39;https://www.vmgirls.com/12985.html&#39;,headers=headers)
-html = response.text
-
-# 解析网页
-urls = re.findall(&#39;&lt;a href=&quot;(.*?)&quot; alt=&quot;.*?&quot; title=&quot;.*?&quot;&gt;&#39;,html)
-print(urls)
-
-# 保存图片
-for url in urls: # 请求上面的解析网页
-    time.sleep(2) # 让程序延迟2秒
-    file_name =url.split(&#39;/&#39;)[-1] # split(&#39;/&#39;)【-1】是处理图片的名字
-    response = requests.get(url, headers=headers)
-    with open(file_name, &#39;wb&#39;) as f: # 打开一个文件,文件名是file_name
-        f.write(response.content)</code></pre>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re <span class="comment"># 正则表达式</span></span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">'User-Agent'</span>:<span class="string">'Mozilla/5.0 (Macintosh; Intel Mac OSX10_14_2) AppleWebKit/537.36(KHTML, like Gecko) Chrome/75.0.3770.100 Safari/537.36'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">response = requests.get(<span class="string">'https://www.vmgirls.com/12985.html'</span>,headers=headers)</span><br><span class="line">html = response.text</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 解析网页</span></span><br><span class="line">urls = re.findall(<span class="string">'&lt;a href="(.*?)" alt=".*?" title=".*?"&gt;'</span>,html)</span><br><span class="line">print(urls)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 保存图片</span></span><br><span class="line"><span class="keyword">for</span> url <span class="keyword">in</span> urls: <span class="comment"># 请求上面的解析网页</span></span><br><span class="line">    time.sleep(<span class="number">2</span>) <span class="comment"># 让程序延迟2秒</span></span><br><span class="line">    file_name =url.split(<span class="string">'/'</span>)[<span class="number">-1</span>] <span class="comment"># split('/')【-1】是处理图片的名字</span></span><br><span class="line">    response = requests.get(url, headers=headers)</span><br><span class="line">    <span class="keyword">with</span> open(file_name, <span class="string">'wb'</span>) <span class="keyword">as</span> f: <span class="comment"># 打开一个文件,文件名是file_name</span></span><br><span class="line">        f.write(response.content)</span><br></pre></td></tr></table></figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -290,7 +261,7 @@ for url in urls: # 请求上面的解析网页
 
 
         
-        一位兴趣使然的作者。文章网址：<a href="/2020/03/15/Python%E7%88%AC%E8%99%AB/" target="_blank" rel="external">https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/</a>
+        一位兴趣使然的作者。文章网址：<a href="/2020/03/15/PythonSpider/" target="_blank" rel="external">https://jpixxs.xyz/2020/03/15/PythonSpider/</a>
         
     </div>
     
@@ -321,7 +292,7 @@ for url in urls: # 请求上面的解析网页
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/&title=《Python爬虫》 — Jpi&pic=https://jpixxs.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://jpixxs.xyz/2020/03/15/PythonSpider/&title=《Python爬虫》 — Jpi&pic=https://jpixxs.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -331,22 +302,22 @@ for url in urls: # 请求上面的解析网页
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/&title=《Python爬虫》 — Jpi&source=这里是python爬虫的分享(◦˙▽˙◦)" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/15/PythonSpider/&title=《Python爬虫》 — Jpi&source=这里是python爬虫的分享(◦˙▽˙◦)" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://jpixxs.xyz/2020/03/15/PythonSpider/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python爬虫》 — Jpi&url=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/&via=https://jpixxs.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python爬虫》 — Jpi&url=https://jpixxs.xyz/2020/03/15/PythonSpider/&via=https://jpixxs.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://jpixxs.xyz/2020/03/15/PythonSpider/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -369,7 +340,7 @@ for url in urls: # 请求上面的解析网页
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/" id="post-prev" class="post-nav-link">
+      <a href="/2020/03/18/LuaLearn/" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
         <h4 class="title">Lua学习</h4>
       </a>
@@ -461,7 +432,7 @@ for url in urls: # 请求上面的解析网页
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/&title=《Python爬虫》 — Jpi&pic=https://jpixxs.xyz/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://jpixxs.xyz/2020/03/15/PythonSpider/&title=《Python爬虫》 — Jpi&pic=https://jpixxs.xyz/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -471,22 +442,22 @@ for url in urls: # 请求上面的解析网页
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/&title=《Python爬虫》 — Jpi&source=这里是python爬虫的分享(◦˙▽˙◦)" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/15/PythonSpider/&title=《Python爬虫》 — Jpi&source=这里是python爬虫的分享(◦˙▽˙◦)" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://jpixxs.xyz/2020/03/15/PythonSpider/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python爬虫》 — Jpi&url=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/&via=https://jpixxs.xyz" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Python爬虫》 — Jpi&url=https://jpixxs.xyz/2020/03/15/PythonSpider/&via=https://jpixxs.xyz" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://jpixxs.xyz/2020/03/15/PythonSpider/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -497,7 +468,7 @@ for url in urls: # 请求上面的解析网页
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://jpixxs.xyz/2020/03/15/Python%E7%88%AC%E8%99%AB/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://jpixxs.xyz/2020/03/15/PythonSpider/" alt="微信分享二维码">
 </div>
 
 
