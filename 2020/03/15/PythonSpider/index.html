@@ -20,7 +20,7 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="技术">
+    <meta name="keywords" content="python">
     <meta name="description" content="这里是python爬虫的分享(◦˙▽˙◦)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python爬虫">
@@ -31,9 +31,9 @@
 <meta property="og:image" content="https://ae01.alicdn.com/kf/H99a90c853f874e2e8dc975cda521e9f3B.jpg">
 <meta property="og:image" content="https://ae01.alicdn.com/kf/Hef59e43c5f874ed59a19e23f155bcfb54.jpg">
 <meta property="article:published_time" content="2020-03-14T19:38:38.000Z">
-<meta property="article:modified_time" content="2020-04-29T05:51:49.372Z">
+<meta property="article:modified_time" content="2020-04-29T10:54:30.795Z">
 <meta property="article:author" content="Jpi">
-<meta property="article:tag" content="技术">
+<meta property="article:tag" content="python">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://ae01.alicdn.com/kf/H99a90c853f874e2e8dc975cda521e9f3B.jpg">
     
@@ -244,7 +244,7 @@
 <p>可以看到已经成功了，我们把我们想要的都给读取出来了</p>
 <p>这时候我们要进行的就是下载  在下面加上</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 保存图片</span></span><br><span class="line"><span class="keyword">for</span> url <span class="keyword">in</span> urls: <span class="comment"># 请求上面的解析网页</span></span><br><span class="line">    time.sleep(<span class="number">2</span>) <span class="comment"># 让程序延迟2秒</span></span><br><span class="line">    file_name =url.split(<span class="string">'/'</span>)[<span class="number">-1</span>] <span class="comment"># split('/')【-1】是处理图片的名字</span></span><br><span class="line">    response = requests.get(url, headers=headers)</span><br><span class="line">    <span class="keyword">with</span> open(file_name, <span class="string">'wb'</span>) <span class="keyword">as</span> f: <span class="comment"># 打开一个文件,文件名是file_name</span></span><br><span class="line">        f.write(response.content)</span><br></pre></td></tr></table></figure>
-<p>这里没法细讲，反正加上就完事了，都弄完之后就能运行了，图片保存的位置是脚本在的地方，我这里是延迟2秒的，可以自行设置</p>
+
 <blockquote>
 <p>到这里就结束了,下面给大家全代码</p>
 </blockquote>
@@ -256,7 +256,7 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-04-29T05:51:49.372Z" itemprop="dateUpdated">2020-04-29 13:51:49</time>
+    最后更新时间：<time datetime="2020-04-29T10:54:30.795Z" itemprop="dateUpdated">2020-04-29 18:54:30</time>
 </span><br>
 
 
@@ -282,7 +282,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li></ul>
 
 
             
