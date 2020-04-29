@@ -21,15 +21,15 @@
     
     
     <meta name="keywords" content="技术">
-    <meta name="description" content="这篇来开始看下Lua语言 推荐使用软件:Androlua+  第一个Lua程序学习第一步我们来开始用Lua输出”Hello World” print(&quot;Hello world&quot;) 运行之后，屏幕上会出现”Hello World” 注释--单行注释 --[[ 多行注释 ]] 字符串a &#x3D; &quot;String&quot; a &#x3D; [[String]] a &#x3D; [&#x3D;&#x3D;&#x3D;[Str">
+    <meta name="description" content="这篇来开始看下Lua语言">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Lua学习">
 <meta property="og:url" content="https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Jpi">
-<meta property="og:description" content="这篇来开始看下Lua语言 推荐使用软件:Androlua+  第一个Lua程序学习第一步我们来开始用Lua输出”Hello World” print(&quot;Hello world&quot;) 运行之后，屏幕上会出现”Hello World” 注释--单行注释 --[[ 多行注释 ]] 字符串a &#x3D; &quot;String&quot; a &#x3D; [[String]] a &#x3D; [&#x3D;&#x3D;&#x3D;[Str">
+<meta property="og:description" content="这篇来开始看下Lua语言">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-03-18T02:35:53.000Z">
-<meta property="article:modified_time" content="2020-04-29T05:51:49.142Z">
+<meta property="article:modified_time" content="2020-04-29T06:24:04.754Z">
 <meta property="article:author" content="Jpi">
 <meta property="article:tag" content="技术">
 <meta name="twitter:card" content="summary">
@@ -194,24 +194,17 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h1 id="这篇来开始看下Lua语言"><a href="#这篇来开始看下Lua语言" class="headerlink" title="这篇来开始看下Lua语言"></a>这篇来开始看下Lua语言</h1><blockquote>
+            <h1 id="这篇来开始看下Lua语言"><a href="#这篇来开始看下Lua语言" class="headerlink" title="这篇来开始看下Lua语言"></a>这篇来开始看下Lua语言</h1><a id="more"></a>
+
+<blockquote>
 <p>推荐使用软件:Androlua+</p>
 </blockquote>
 <h2 id="第一个Lua程序"><a href="#第一个Lua程序" class="headerlink" title="第一个Lua程序"></a>第一个Lua程序</h2><p>学习第一步我们来开始用Lua输出”Hello World”</p>
-<pre><code class="lua">print(&quot;Hello world&quot;)</code></pre>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">"Hello world"</span>)</span><br></pre></td></tr></table></figure>
 <p>运行之后，屏幕上会出现”Hello World”</p>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code class="lua">--单行注释
---[[
-多行注释
-]]</code></pre>
-<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><pre><code class="lua">a = &quot;String&quot;
-a = [[String]]
-a = [===[String]===]</code></pre>
-<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><pre><code class="lua">a = &quot;Hello World&quot;
---或者多重赋值
-a,b = &quot;Hello&quot;,&quot;World&quot;
---又或者交换值
-a,b = b,a</code></pre>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--单行注释</span></span><br><span class="line"><span class="comment">--[[</span></span><br><span class="line"><span class="comment">多行注释</span></span><br><span class="line"><span class="comment">]]</span></span><br></pre></td></tr></table></figure>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">"String"</span></span><br><span class="line">a = <span class="string">[[String]]</span></span><br><span class="line">a = <span class="string">[===[String]===]</span></span><br></pre></td></tr></table></figure>
+<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="string">"Hello World"</span></span><br><span class="line"><span class="comment">--或者多重赋值</span></span><br><span class="line">a,b = <span class="string">"Hello"</span>,<span class="string">"World"</span></span><br><span class="line"><span class="comment">--又或者交换值</span></span><br><span class="line">a,b = b,a</span><br></pre></td></tr></table></figure>
 <h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><p>Lua中有8个基本类型分别为：</p>
 <p>nil、boolean、number、string、userdata、function、thread和table。</p>
 <p>1.nil<br>此类型只有一个值 nil。用于表示“空”值。全局变量默认为 nil，删除一个已经赋值的全局变量只需要将其赋值为 nil（对比 JavaScript，赋值 null 并不能完全删除对象的属性，属性还存在，值为 null）</p>
@@ -224,31 +217,16 @@ a,b = b,a</code></pre>
 <p>  8.table<br>  被实现为关联数组（associative arrays），可以通过任何值来进行索引（nil 除外）。和全局变量一样，table 中未赋值的域为 nil，删除一个域只需要将其赋值为 nil（实际上，全局变量就是被放置在一个 table 中）</p>
 <h2 id="Table-数组"><a href="#Table-数组" class="headerlink" title="Table(数组)"></a>Table(数组)</h2><p>table是lua唯一的数据结构。<br>table是lua中最重要的数据类型。<br>table类似于 python 中的字典。<br>table只能通过构造式来创建。其他语言提供的其他数据结构如array、list等等，lua都是通过table来实现的。<br>table非常实用，可以用在不同的情景下。最常用的方式就是把table当成其他语言的数组。</p>
 <p>实例1:</p>
-<pre><code class="lua">mytable = {}
-for index = 1, 100 do
-  mytable[index] = math.random(1,1000)
-end</code></pre>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mytable = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> index = <span class="number">1</span>, <span class="number">100</span> <span class="keyword">do</span></span><br><span class="line">  mytable[index] = <span class="built_in">math</span>.<span class="built_in">random</span>(<span class="number">1</span>,<span class="number">1000</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+
 <p>说明：<br>1.数组不必事先定义大小，可动态增长。<br>2.创建包含100个元素的table，每个元素随机赋1-1000之间的值。<br>3.可以通过mytable[x]访问任意元素，x表示索引。<br>4.索引从1开始。</p>
 <p>实例2:</p>
-<pre><code class="lua">tab = { a = 10, b = 20, c = 30, d = &#39;www.jb51.net&#39; }
-print(tab[&quot;a&quot;]) </code></pre>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tab = &#123; a = <span class="number">10</span>, b = <span class="number">20</span>, c = <span class="number">30</span>, d = <span class="string">'www.jb51.net'</span> &#125;</span><br><span class="line"><span class="built_in">print</span>(tab[<span class="string">"a"</span>])</span><br></pre></td></tr></table></figure>
 <p>说明：<br>1.table 中的每项要求是 key = value 的形式。<br>2.key 只能是字符串， 这里的 a, b, c, d 都是字符串，但是不能加上引号。<br>3.通过 key 来访问 table 的值，这时候， a 必须加上引号。</p>
 <p>实例3:</p>
-<pre><code class="lua">tab = { 10, s = &#39;abc&#39;, 11, 12, 13 } 
-print(tab[1]) = 10
-print(tab[2]) = 11
-print(tab[3]) = 12
-print(tab[4]) = 13</code></pre>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">tab = &#123; <span class="number">10</span>, s = <span class="string">'abc'</span>, <span class="number">11</span>, <span class="number">12</span>, <span class="number">13</span> &#125; </span><br><span class="line"><span class="built_in">print</span>(tab[<span class="number">1</span>]) = <span class="number">10</span></span><br><span class="line"><span class="built_in">print</span>(tab[<span class="number">2</span>]) = <span class="number">11</span></span><br><span class="line"><span class="built_in">print</span>(tab[<span class="number">3</span>]) = <span class="number">12</span></span><br><span class="line"><span class="built_in">print</span>(tab[<span class="number">4</span>]) = <span class="number">13</span></span><br></pre></td></tr></table></figure>
 <p>说明：<br>1.数标从1开始。<br>2.省略key，会自动以1开始编号，并跳过设置过的key。</p>
-<h2 id="比较操作符"><a href="#比较操作符" class="headerlink" title="比较操作符"></a>比较操作符</h2><pre><code class="yml">--Lua 支持下列比较操作符：
-
-==: 等于
-~=: 不等于
-&lt;: 小于
-&gt;: 大于
-&lt;=: 小于等于
-&gt;=: 大于等于
---这些操作的结果不是 false就是 true。</code></pre>
+<h2 id="比较操作符"><a href="#比较操作符" class="headerlink" title="比较操作符"></a>比较操作符</h2><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">--Lua</span> <span class="string">支持下列比较操作符：</span></span><br><span class="line"></span><br><span class="line"><span class="string">==:</span> <span class="string">等于</span></span><br><span class="line"><span class="string">~=:</span> <span class="string">不等于</span></span><br><span class="line"><span class="string">&lt;:</span> <span class="string">小于</span></span><br><span class="line"><span class="string">&gt;:</span> <span class="string">大于</span></span><br><span class="line"><span class="string">&lt;=:</span> <span class="string">小于等于</span></span><br><span class="line"><span class="string">&gt;=:</span> <span class="string">大于等于</span></span><br><span class="line"><span class="string">--这些操作的结果不是</span> <span class="literal">false</span><span class="string">就是</span> <span class="literal">true</span><span class="string">。</span></span><br></pre></td></tr></table></figure>
 
         </div>
 
@@ -257,12 +235,12 @@ print(tab[4]) = 13</code></pre>
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2020-04-29T05:51:49.142Z" itemprop="dateUpdated">2020-04-29 13:51:49</time>
+    最后更新时间：<time datetime="2020-04-29T06:24:04.754Z" itemprop="dateUpdated">2020-04-29 14:24:04</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/" target="_blank" rel="external">https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/</a>
+        一位兴趣使然的作者。文章网址：<a href="/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/" target="_blank" rel="external">https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/</a>
         
     </div>
     
@@ -303,7 +281,7 @@ print(tab[4]) = 13</code></pre>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&title=《Lua学习》 — Jpi&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&title=《Lua学习》 — Jpi&source=这篇来开始看下Lua语言" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -338,7 +316,14 @@ print(tab[4]) = 13</code></pre>
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/04/29/C%E8%AF%AD%E8%A8%80%E7%BB%93%E6%9E%84%E4%BD%93-1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">C语言结构体</h4>
+      </a>
+    </div>
   
 
   
@@ -443,7 +428,7 @@ print(tab[4]) = 13</code></pre>
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&title=《Lua学习》 — Jpi&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&title=《Lua学习》 — Jpi&source=这篇来开始看下Lua语言" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
