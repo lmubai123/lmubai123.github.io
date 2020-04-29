@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Lua学习 | Jpi | 江の忘川</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="技术">
+    <meta name="description" content="这篇来开始看下Lua语言 推荐使用软件:Androlua+  第一个Lua程序学习第一步我们来开始用Lua输出”Hello World” print(&quot;Hello world&quot;) 运行之后，屏幕上会出现”Hello World” 注释--单行注释 --[[ 多行注释 ]] 字符串a &#x3D; &quot;String&quot; a &#x3D; [[String]] a &#x3D; [&#x3D;&#x3D;&#x3D;[Str">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Lua学习">
+<meta property="og:url" content="https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Jpi">
+<meta property="og:description" content="这篇来开始看下Lua语言 推荐使用软件:Androlua+  第一个Lua程序学习第一步我们来开始用Lua输出”Hello World” print(&quot;Hello world&quot;) 运行之后，屏幕上会出现”Hello World” 注释--单行注释 --[[ 多行注释 ]] 字符串a &#x3D; &quot;String&quot; a &#x3D; [[String]] a &#x3D; [&#x3D;&#x3D;&#x3D;[Str">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-03-18T02:35:53.000Z">
+<meta property="article:modified_time" content="2020-04-29T05:51:49.142Z">
+<meta property="article:author" content="Jpi">
+<meta property="article:tag" content="技术">
+<meta name="twitter:card" content="summary">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">Jpi</h5>
+          <a href="mailto:lmubai418@gmail.com" title="lmubai418@gmail.com" class="mail">lmubai418@gmail.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/categories"  >
+                <i class="icon icon-lg icon-th-list"></i>
+                Categories
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/lmubau123" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect active">
+              <a href="/" target="_blank" >
+                <i class="icon icon-lg icon-weibo"></i>
+                Weibo
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/custom"  >
+                <i class="icon icon-lg icon-link"></i>
+                link
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Lua学习</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Lua学习</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-03-18T02:35:53.000Z" itemprop="datePublished" class="page-time">
+  2020-03-18
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#这篇来开始看下Lua语言"><span class="post-toc-number">1.</span> <span class="post-toc-text">这篇来开始看下Lua语言</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#第一个Lua程序"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">第一个Lua程序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#注释"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">注释</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#字符串"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">字符串</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#赋值"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">赋值</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#数值类型"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">数值类型</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Table-数组"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">Table(数组)</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#比较操作符"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">比较操作符</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-Lua学习"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Lua学习</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-03-18 10:35:53" datetime="2020-03-18T02:35:53.000Z"  itemprop="datePublished">2020-03-18</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h1 id="这篇来开始看下Lua语言"><a href="#这篇来开始看下Lua语言" class="headerlink" title="这篇来开始看下Lua语言"></a>这篇来开始看下Lua语言</h1><blockquote>
+<p>推荐使用软件:Androlua+</p>
+</blockquote>
+<h2 id="第一个Lua程序"><a href="#第一个Lua程序" class="headerlink" title="第一个Lua程序"></a>第一个Lua程序</h2><p>学习第一步我们来开始用Lua输出”Hello World”</p>
+<pre><code class="lua">print(&quot;Hello world&quot;)</code></pre>
+<p>运行之后，屏幕上会出现”Hello World”</p>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><pre><code class="lua">--单行注释
+--[[
+多行注释
+]]</code></pre>
+<h2 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h2><pre><code class="lua">a = &quot;String&quot;
+a = [[String]]
+a = [===[String]===]</code></pre>
+<h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><pre><code class="lua">a = &quot;Hello World&quot;
+--或者多重赋值
+a,b = &quot;Hello&quot;,&quot;World&quot;
+--又或者交换值
+a,b = b,a</code></pre>
+<h2 id="数值类型"><a href="#数值类型" class="headerlink" title="数值类型"></a>数值类型</h2><p>Lua中有8个基本类型分别为：</p>
+<p>nil、boolean、number、string、userdata、function、thread和table。</p>
+<p>1.nil<br>此类型只有一个值 nil。用于表示“空”值。全局变量默认为 nil，删除一个已经赋值的全局变量只需要将其赋值为 nil（对比 JavaScript，赋值 null 并不能完全删除对象的属性，属性还存在，值为 null）</p>
+<p>2.boolean<br>此类型有两个值 true 和 false。在 Lua 中，false 和 nil 都表示条件假，其他值都表示条件真（区别于 C/C++ 等语言的是，0 是真）</p>
+<p>3.number<br>双精浮点数（IEEE 754 标准），Lua 没有整数类型</p>
+<p>4.string<br>你可以保存任意的二进制数据到字符串中（包括 0）。字符串中的字符是不可以改变的（需要改变时，你只能创建一个新的字符串）。获取字符串的长度，可以使用 # 操作符（长度操作符）。例如：print(#”hello”)。字符串可以使用单引号，也可以使用双引号包裹，对于多行的字符串还可以使用 [[ 和 ]] 包裹。字符串中可以使用转义字符，例如 \n \r 等。使用 [[ 和 ]] 包裹的字符串中的转义字符不会被转义</p>
+<p>5.userdata<br>用于保存任意的 C 数据。userdata 只能支持赋值操作和比较测试</p>
+<p>6.function<br>  函数是第一类值（first-class value），我们能够像使用其他变量一样的使用函数（函数能够保存在变量中，可以作为参数传递给函数）</p>
+<p>  7.thread<br>  区别于我们常常说的系统级线程</p>
+<p>  8.table<br>  被实现为关联数组（associative arrays），可以通过任何值来进行索引（nil 除外）。和全局变量一样，table 中未赋值的域为 nil，删除一个域只需要将其赋值为 nil（实际上，全局变量就是被放置在一个 table 中）</p>
+<h2 id="Table-数组"><a href="#Table-数组" class="headerlink" title="Table(数组)"></a>Table(数组)</h2><p>table是lua唯一的数据结构。<br>table是lua中最重要的数据类型。<br>table类似于 python 中的字典。<br>table只能通过构造式来创建。其他语言提供的其他数据结构如array、list等等，lua都是通过table来实现的。<br>table非常实用，可以用在不同的情景下。最常用的方式就是把table当成其他语言的数组。</p>
+<p>实例1:</p>
+<pre><code class="lua">mytable = {}
+for index = 1, 100 do
+  mytable[index] = math.random(1,1000)
+end</code></pre>
+<p>说明：<br>1.数组不必事先定义大小，可动态增长。<br>2.创建包含100个元素的table，每个元素随机赋1-1000之间的值。<br>3.可以通过mytable[x]访问任意元素，x表示索引。<br>4.索引从1开始。</p>
+<p>实例2:</p>
+<pre><code class="lua">tab = { a = 10, b = 20, c = 30, d = &#39;www.jb51.net&#39; }
+print(tab[&quot;a&quot;]) </code></pre>
+<p>说明：<br>1.table 中的每项要求是 key = value 的形式。<br>2.key 只能是字符串， 这里的 a, b, c, d 都是字符串，但是不能加上引号。<br>3.通过 key 来访问 table 的值，这时候， a 必须加上引号。</p>
+<p>实例3:</p>
+<pre><code class="lua">tab = { 10, s = &#39;abc&#39;, 11, 12, 13 } 
+print(tab[1]) = 10
+print(tab[2]) = 11
+print(tab[3]) = 12
+print(tab[4]) = 13</code></pre>
+<p>说明：<br>1.数标从1开始。<br>2.省略key，会自动以1开始编号，并跳过设置过的key。</p>
+<h2 id="比较操作符"><a href="#比较操作符" class="headerlink" title="比较操作符"></a>比较操作符</h2><pre><code class="yml">--Lua 支持下列比较操作符：
+
+==: 等于
+~=: 不等于
+&lt;: 小于
+&gt;: 大于
+&lt;=: 小于等于
+&gt;=: 大于等于
+--这些操作的结果不是 false就是 true。</code></pre>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2020-04-29T05:51:49.142Z" itemprop="dateUpdated">2020-04-29 13:51:49</time>
+</span><br>
+
+
+        
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/" target="_blank" rel="external">https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/</a>
+        
+    </div>
+    
+    <footer>
+        <a href="https://jpixxs.xyz">
+            <img src="/img/avatar.jpg" alt="Jpi">
+            Jpi
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF/" rel="tag">技术</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&title=《Lua学习》 — Jpi&pic=https://jpixxs.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&title=《Lua学习》 — Jpi&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Lua学习》 — Jpi&url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&via=https://jpixxs.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/03/15/Python%E7%88%AC%E8%99%AB/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Python爬虫</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/false" alt="打赏二维码">
+        </div>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>Jpi &copy; 2015 - 2020</span>
+            <span>
+                
+                Power by Jpi.
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&title=《Lua学习》 — Jpi&pic=https://jpixxs.xyz/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&title=《Lua学习》 — Jpi&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Lua学习》 — Jpi&url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/&via=https://jpixxs.xyz" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://jpixxs.xyz/2020/03/18/Lua%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '死鬼去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
